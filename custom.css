@@ -1,0 +1,14 @@
+body{
+  margin: 0;
+  ppadding: 0;
+}
+
+.container{
+  margin: 20px;
+  width: 300px;
+}
+
+#response, #loading{
+  display: none;
+  text-align: center;
+}
