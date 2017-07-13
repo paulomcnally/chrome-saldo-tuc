@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#number").keydown(function (e) {
+  $('.input').keydown(function (e) {
     // Allow: backspace, delete, tab, escape, enter and .
     if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
     // Allow: Ctrl+A
@@ -15,18 +15,25 @@ $(document).ready(function() {
     }
   });
   
-  $('.btn').on('click', function(){
-    var number = $("#number").val();
-    if( number !== "" ){
-      $("#response").hide();
-      $("#loading").show();
+  $('.btn').on('click', function() {
+    var $balance = $('.balance');
+    var number = $('.input').val();
+
+    if (number !== ''){
+      $balance.addClass('loading')
+        .removeClass('error')
+        .text('');
+
       $.ajax({
         url: 'http://tuc.herokuapp.com/v2/' + number,
-        type: 'GET',
-        dataType: 'json',
-        success: function(json){
-          $("#loading").hide();
-          $("#response").text( json.balance ).show();
+        type: 'GET'
+      }).done(function(json) {
+        $balance.removeClass('loading');
+
+        if (json.error) {
+          $balance.addClass('error').text(json.error.message);
+        } else {
+          $balance.text('C$ ' + json.balance);
         }
       });
     }
