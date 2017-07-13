@@ -1,14 +1,87 @@
-body{
-  margin: 0;
-  ppadding: 0;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
-.container{
-  margin: 20px;
+.container {
   width: 300px;
+
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .075);
 }
 
-#response, #loading{
-  display: none;
-  text-align: center;
+.header {
+  align-items: center;
+  border-bottom: 2px solid #dbdfe2;
+  display: flex;
+  padding: 8px 10px;
+
+  background-color: #f1f1f1;
+}
+
+.image {
+  height: 24px;
+  margin-right: 8px;
+  width: 24px;
+}
+
+.label {
+  font-size: 13px;
+
+  color: #566270;
+}
+
+.input {
+  border: none;
+  padding: 12px 10px;
+  width: 100%;
+
+  outline: none;
+}
+
+.footer {
+  align-items: center;
+  border-top: 2px solid #dbdfe2;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px;
+
+  background-color: #f0f3f4;
+}
+
+.balance {
+  font-size: 13px;
+  font-weight: bold;
+
+  color: #566270;
+}
+
+.balance.error {
+  color: red;
+}
+
+.balance.loading {
+  height: 16px;
+  width: 16px;
+
+  background: url('ajax-loader.gif') no-repeat;
+}
+
+.btn {
+  border: 2px solid #5ab98a;
+  padding: 4px 8px;
+
+  font-size: 11px;
+
+  background-color: #64c896;
+  border-radius: 3px;
+  color: #fefefe;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: #5ab98a;
 }

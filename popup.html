@@ -1,24 +1,32 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="utf-8">
+
     <title>Getting Started Extension's Popup</title>
-    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <link href="sanitize.min.css" rel="stylesheet">
     <link href="custom.css" rel="stylesheet">
+
     <script src="jquery.min.js"></script>
     <script src="popup.js"></script>
   </head>
+
   <body>
     <div class="container">
-      <div id="loading"><img src="ajax-loader.gif" rel="Loading"/></div>
-      <div class="alert alert-success" role="alert" id="response"></div>
-      <form role="form">
-        <div class="form-group">
-          <label for="exampleInputEmail1">N&uacute;mero TUC</label>
-          <input type="text" class="form-control" name="number" id="number" placeholder="N&uacute;mero TUC">
+      <div class="header">
+        <img alt="Logo" class="image" src="icon_128.png">
+        <div class="label">
+          Número TUC
         </div>
-      </form>
-
-      <button type="button" class="btn btn-success">Consultar</button>
+      </div>
+      <div>
+        <input class="input" maxlength="8" type="text">
+      </div>
+      <div class="footer">
+        <div class="balance"></div>
+        <button class="btn">Consultar</button>
+      </div>
     </div>
   </body>
 </html>
